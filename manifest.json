@@ -1,0 +1,12 @@
+
+{
+  "name": "Jus Exam Study",
+  "short_name": "Jus Exam",
+  "description": "Exam preparation and evaluation",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#172554",
+  "icons": []
+}
