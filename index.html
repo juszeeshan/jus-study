@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172554">
+  <meta name="description" content="Jus Exam Study">
+  <title>Jus Exam Study</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Jus Exam Study</h1>
+      <p>Prepare, practise and evaluate</p>
+    </div>
+    <button id="historyBtn" class="secondary">History</button>
+  </header>
+
+  <main class="container">
+
+    <section class="panel upload-panel">
+      <h2>Upload question and answer PDFs</h2>
+
+      <div class="upload-grid">
+        <label class="upload-box">
+          <strong>QUE</strong>
+          <span>Question paper PDF</span>
+          <input id="questionPdf" type="file" accept=".pdf,application/pdf">
+          <small id="questionName">No file selected</small>
+        </label>
+
+        <label class="upload-box">
+          <strong>ANS</strong>
+          <span>Separate answer-key PDF</span>
+          <input id="answerPdf" type="file" accept=".pdf,application/pdf">
+          <small id="answerName">No file selected</small>
+        </label>
+
+        <label class="upload-box">
+          <strong>ANSBOOK</strong>
+          <span>Combined question and answer PDF</span>
+          <input id="answerBookPdf" type="file" accept=".pdf,application/pdf">
+          <small id="answerBookName">No file selected</small>
+        </label>
+      </div>
+
+      <div class="toolbar">
+        <button id="processBtn">Process PDFs</button>
+        <button id="addBtn" class="secondary">+ Add question</button>
+        <button id="evaluateBtn" class="success" disabled>Evaluate my paper</button>
+        <button id="exportBtn" class="secondary">Export CSV</button>
+      </div>
+
+      <p id="status" class="status" role="status">Ready.</p>
+    </section>
+
+    <section class="panel student-panel">
+      <label>
+        Student name
+        <input id="studentName" type="text" placeholder="Enter name">
+      </label>
+
+      <label>
+        Email
+        <input id="studentEmail" type="email" placeholder="Enter email">
+      </label>
+    </section>
+
+    <section class="workspace">
+
+      <section class="panel preview-panel">
+        <h2>Question Paper</h2>
+        <div id="paperPreview" class="paper-preview">
+          <p>Upload a PDF to preview the question paper.</p>
+        </div>
+      </section>
+
+      <section class="panel answers-panel">
+        <div class="answer-heading">
+          <h2>Answer Sheet</h2>
+          <select id="subjectFilter">
+            <option value="All">All subjects</option>
+          </select>
+        </div>
+
+        <div id="questionList">
+          <p>Your questions will appear here.</p>
+        </div>
+      </section>
+
+    </section>
+
+    <section class="panel reference-panel">
+      <h2>Reference Answers</h2>
+      <div id="referenceList">
+        <p>No reference answers loaded.</p>
+      </div>
+    </section>
+
+    <section class="panel history-panel" id="historySection" hidden>
+      <div class="answer-heading">
+        <h2>Practice History</h2>
+        <button id="closeHistoryBtn" class="secondary">Close</button>
+      </div>
+      <div id="historyList"></div>
+      <button id="clearHistoryBtn" class="danger">Clear history</button>
+    </section>
+
+  </main>
+
+  <div id="resultModal" class="modal" hidden>
+    <div class="modal-box">
+      <div class="modal-heading">
+        <h2>Evaluation Result</h2>
+        <button id="closeResultBtn" class="secondary">Close</button>
+      </div>
+      <div id="resultContent"></div>
+      <button id="printBtn">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <footer>
+    Jus Exam Study
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
