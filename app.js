@@ -9,7 +9,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 /* PASTE YOUR DEPLOYED GOOGLE APPS SCRIPT URL HERE */
-const BACKEND_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzYpHn1GAC0WfZ1xrU59n6bWROH_Huw1a72udD3s9p6ZFDXd_6qkT-tOC8MyC2SH0jK/exec";
 
 const $ = id => document.getElementById(id);
 
